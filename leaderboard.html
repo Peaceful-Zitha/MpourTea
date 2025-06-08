@@ -102,6 +102,9 @@
   <!-- 🎊 Confetti library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+  <!-- 🔊 Sound effect -->
+  <audio id="win-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_57a0b7b43b.mp3"></audio>
+
   <script>
     const names = [];
 
@@ -150,15 +153,19 @@
       const winner = names[Math.floor(Math.random() * names.length)];
       document.getElementById("winner").textContent = `🎉 Winner: ${winner} 🎉`;
 
-      // Move winner to top
       updateLeaderboard(winner);
 
-      // 🎊 Trigger confetti
+      // 🎊 Confetti
       confetti({
         particleCount: 150,
         spread: 80,
         origin: { y: 0.6 }
       });
+
+      // 🔊 Sound
+      const sound = document.getElementById("win-sound");
+      sound.currentTime = 0;
+      sound.play();
     }
   </script>
 
