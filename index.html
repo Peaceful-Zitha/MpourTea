@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scan to Join MpourTea 🍵</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #fef8f5;
+    }
+    h1 {
+      color: #7b4f3f;
+    }
+    #qrcode {
+      margin: 30px auto;
+      width: fit-content;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #c04c00;
+      border: 1px solid #c04c00;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍵 MpourTea - Scan to Join the Lucky Draw</h1>
+
+  <div id="qrcode"></div>
+
+  <p>Or <a href="leaderboard.html">click here to go to the form directly</a></p>
+
+  <script>
+    const formUrl = "./leaderboard.html"; // Relative link to the form page
+    new QRCode(document.getElementById("qrcode"), {
+      text: formUrl,
+      width: 200,
+      height: 200
+    });
+  </script>
+
+</body>
+</html>
